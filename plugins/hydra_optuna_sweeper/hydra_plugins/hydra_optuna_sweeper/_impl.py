@@ -158,6 +158,7 @@ class OptunaSweeperImpl(Sweeper):
         max_failure_rate: float,
         search_space: Optional[DictConfig],
         custom_search_space: Optional[str],
+        gc_after_trial: Optional[bool],
         params: Optional[DictConfig],
     ) -> None:
         self.sampler = sampler
@@ -175,6 +176,7 @@ class OptunaSweeperImpl(Sweeper):
         if custom_search_space:
             self.custom_search_space_extender = get_method(custom_search_space)
         self.search_space = search_space
+        self.gc_after_trial = gc_after_trial
         self.params = params
         self.job_idx: int = 0
         self.search_space_distributions: Optional[Dict[str, BaseDistribution]] = None

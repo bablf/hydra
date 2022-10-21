@@ -22,6 +22,7 @@ class OptunaSweeper(Sweeper):
         max_failure_rate: float,
         search_space: Optional[DictConfig],
         custom_search_space: Optional[str],
+        gc_after_trial: Optional[bool],
         params: Optional[DictConfig],
     ) -> None:
         from ._impl import OptunaSweeperImpl
@@ -36,6 +37,7 @@ class OptunaSweeper(Sweeper):
             max_failure_rate,
             search_space,
             custom_search_space,
+            gc_after_trial,
             params,
         )
 

@@ -176,6 +176,9 @@ class OptunaSweeperConf:
     # Maximum authorized failure rate for a batch of parameters
     max_failure_rate: float = 0.0
 
+    # set true to clean up memory to prevent CUDA OOM
+    gc_after_trial: bool = False
+
     search_space: Optional[Dict[str, Any]] = None
 
     params: Optional[Dict[str, str]] = None
